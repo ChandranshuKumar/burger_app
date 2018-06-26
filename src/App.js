@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-
+      <div>
+        <p>this is normal paragraph madafaka!!!!</p>
       </div>
     );
   }

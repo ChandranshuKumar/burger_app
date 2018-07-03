@@ -12,10 +12,6 @@ import * as actions from '../../store/actions/index';
 import axios from '../../axios-orders';
 
 class BurgerBuilder extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {...}
-    // }
     state = {
         purchasing: false
     }
@@ -54,7 +50,7 @@ class BurgerBuilder extends Component {
             ...this.props.ings
         };
         for ( let key in disabledInfo ) {
-            disabledInfo[key] = disabledInfo[key] <= 0
+            disabledInfo[key] = disabledInfo[key] <= 0;
         }
         let orderSummary = null;
         let burger = this.props.error ? <p>Ingredients can't be loaded!</p> : <Spinner />;
@@ -96,7 +92,7 @@ const mapStateToProps = state => {
         price: state.burgerBuilder.totalPrice,
         error: state.burgerBuilder.error
     };
-}
+};
 
 const mapDispatchToProps = dispatch => {
     return {
@@ -104,7 +100,7 @@ const mapDispatchToProps = dispatch => {
         onIngredientRemoved: (ingName) => dispatch(actions.removeIngredient(ingName)),
         onInitIngredients: () => dispatch(actions.initIngredients()),
         onInitPurchase: () => dispatch(actions.purchaseInit())
-    }
-}
+    };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler( BurgerBuilder, axios ));

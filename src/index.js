@@ -19,7 +19,7 @@ const rootReducer = combineReducers({
 });
 
 const store = createStore(rootReducer, composeEnhancers(
-    applyMiddleware(thunk)    
+    applyMiddleware(thunk)
 ));
 
 const app = (
@@ -30,5 +30,5 @@ const app = (
     </Provider>
 );
 
-ReactDOM.render(app, document.getElementById('root'));
+ReactDOM.render( app, document.getElementById( 'root' ) );
 registerServiceWorker();

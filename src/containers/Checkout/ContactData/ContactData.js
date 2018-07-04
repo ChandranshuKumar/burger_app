@@ -6,7 +6,7 @@ import Spinner from '../../../components/UI/Spinner/Spinner';
 import classes from './ContactData.css';
 import axios from '../../../axios-orders';
 import Input from '../../../components/UI/Input/Input';
-import withErrorHandler from '../../../hoc/withErrorHandler/withErrorHandler'
+import withErrorHandler from '../../../hoc/withErrorHandler/withErrorHandler';
 import * as actions from '../../../store/actions/index';
 
 class ContactData extends Component {
@@ -108,7 +108,7 @@ class ContactData extends Component {
             ingredients: this.props.ings,
             price: this.props.price,
             orderData: formData
-        }
+        };
 
         this.props.onOrderBurger(order);
         
@@ -125,21 +125,21 @@ class ContactData extends Component {
         }
 
         if (rules.minLength) {
-            isValid = value.length >= rules.minLength && isValid
+            isValid = value.length >= rules.minLength && isValid;
         }
 
         if (rules.maxLength) {
-            isValid = value.length <= rules.maxLength && isValid
+            isValid = value.length <= rules.maxLength && isValid;
         }
 
         if (rules.isEmail) {
             const pattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
-            isValid = pattern.test(value) && isValid
+            isValid = pattern.test(value) && isValid;
         }
 
         if (rules.isNumeric) {
             const pattern = /^\d+$/;
-            isValid = pattern.test(value) && isValid
+            isValid = pattern.test(value) && isValid;
         }
 
         return isValid;
@@ -205,7 +205,7 @@ const mapStateToProps = state => {
         ings: state.burgerBuilder.ingredients,
         price: state.burgerBuilder.totalPrice,
         loading: state.order.loading
-    }
+    };
 };
 
 const mapDispatchToProps = dispatch => {
